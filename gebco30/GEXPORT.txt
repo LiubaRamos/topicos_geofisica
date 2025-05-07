@@ -1,0 +1,44 @@
+Gridded Data Export Formats
+
+The export of GEBCO's gridded bathymetric data sets is achieved through the Export Data option under the File menu. Formats are included that are compatible with the GMT (Generic Mapping Tools) system (http://gmt.soest.hawaii.edu/).
+
+The entire global grid files or any subset may be exported in a simple ASCII format or as a NetCDF file (http://www.unidata.ucar.edu/packages/netcdf/).
+
+The elevation values are stored as signed 2-byte integers with the convention that bathymetric depths have negative values and topographic heights have positive values.
+
+The GEBCO One Minute Grid is at one arc-minute intervals of latitude by one arc-minute of longitude, stored in grid line registration format. 
+
+The GEBCO_08 Grid is at 30 arc-seconds intervals of latitude and longitude, stored in pixel centred registration format. 
+
+ASCII Export Format
+
+The following options are available through the Export Data Dialog Box:
+
+* Export the data in the format: longitude latitude elevation. Longitude and latitude formats may be selected from the following options:
+
+o decimal degrees
+o degrees and decimal minutes
+o degrees, minutes and decimal seconds
+
+* Export the elevation data only, as either one data point per line or one row of data per line.  In the latter case, the data values may be separated by commas, spaces or output in a fixed-width format.
+
+For all ASCII grid export formats:
+
+* The export file has 11 header records. 
+* The grid points are read eastwards from the Northwest corner of the selected data area.
+ 
+NetCDF Format
+
+The GEBCO One Minute Grid and GEBCO_08 Grid are both stored in netCDF as a one dimensional array of 2-byte signed integers that represent integer elevations in metres. 
+
+For the GEBCO One Minute Grid:
+
+The complete global data set consists of 10,801 x 21,601 data values, one for each one minute of latitude and longitude, resulting in a total of 233,312,401 points. 
+The data start at position 90°N, 180°W and are arranged in latitudinal bands of 360 degrees x 60 points/degree + 1 = 21,601 values. The data range eastward from 180°W to 180°E. i.e. the 180° value is repeated. Thus, the first band contains 21,601 repeated values for 90°N, then followed by a band of 21,601 values at 89° 59'N and so on at one minute latitude intervals down to 90°S. 
+
+For the GEBCO_08 Grid:
+
+The complete global data set consists of 21,600 rows x 43,200 columns, resulting in a total of 9,331,200,000 data points. 
+The data start at the northwest corner of the file, i.e. for the global file, position 89°59'45"N, 179°59'45"W, and are arranged in latitudinal bands of 360 degrees x 120 points/degree = 43,200 values. 
+The data range eastward from 179°59'45"W to 179°59'45"E. Thus, the first band contains 43,200 values for 89°59'45"N, then followed by a band of 43,200 values at 89°59'15"N and so on at 30 arc-second latitude intervals down to 89°59'45"S.
+
