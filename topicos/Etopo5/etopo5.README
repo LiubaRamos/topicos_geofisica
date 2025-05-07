@@ -1,0 +1,41 @@
+etopo5.northern.bat.Z   8.3 Mb
+etopo5.southern.bat.Z   7.9 Mb
+
+These two files contain worldwide bathymetric and elevation data in
+meters with a 5 minute by 5 minute latitude/longitude data density.
+The data set was originally produced by the Defense Mapping Agency.
+The files were obtained from NGDC and renamed from NGDC ETOPO5 (DBDB5 +
+topography).
+
+The .Z filename means the files were compressed with the Unix 'compress'
+command.  These files are much smaller than the ASCII originals, but
+are now in binary form.  Tell your FTP software to use a binary transfer,
+then uncompress the files on your system. On most Unix systems, type
+something like:
+
+    uncompress etopo5.northern.bat.Z
+
+Each file is about 28 Mb in uncompressed ASCII.
+
+BACKGROUND
+
+The two data files on tape ETOPO5 are renamed files from the NGDC
+ETOPO5 (DBDB5 + topography) data as of 4/7/86.  The files (NORTHERN.BAT
+and SOUTHERN.BAT) cover the northern and southern hemispheres and
+consist of integer bathy/elevation values in meters every 5 minutes of
+lat/long.
+
+The values are recorded starting at 90N 000E (for NORTHERN.BAT) or 00N
+000E (for SOUTHERN.BAT), incrementing at 5 minutes of longitude
+eastward for 4320 values (360 degrees).  The next logical record is 5
+minutes south and contains 4320 values starting at 000E again.  This
+pattern continues for 1080 logical records (90 degrees).
+
+Note --
+1 logical record (4320 values) = 4 physical records of 1080 values.
+
+For more information, contact:
+
+Norman Maher, US Geological Survey
+nmaher@octopus.wr.usgs.gov
+Fri Aug 13 13:36:54 PDT 1993
