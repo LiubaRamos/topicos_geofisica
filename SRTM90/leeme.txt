@@ -1,0 +1,21 @@
+La nomenclatura del nombre de los archivos es:
+Peru_latitudsuperior_longitudizquierda.mat
+
+Los archivos *.mat estan en formato Matlab 6.5
+La data esta en formato raster o matricial.
+Para cargar el archivo se usa el comando:
+
+load nombre_archivo.mat
+
+La data esta en la variable o matriz "A" y la leyenda en "maplegend"
+
+The Map Legend
+
+maplegend = [cells/angle_unit north_latitude west_longitude]
+
+Para SRTM90, el maplegend se obtiene del archivo txt:
+maplegend(1) = 1/cellsize;
+maplegend(2) = yllcorner + 5;
+maplegend(3) = xllcorner;
+
+cesarsud86@hotmail.com
